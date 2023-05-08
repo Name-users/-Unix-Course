@@ -1,0 +1,13 @@
+Проверяем, что все 3 задачи запущенны
+$ ps -ef | grep /bin/sleep | head -n 3
+username   15162   15158  0 13:09 ?        00:00:00 /bin/sleep 3s
+username   15186   15158  0 13:09 ?        00:00:00 /bin/sleep 2s
+username   15187   15158  0 13:09 ?        00:00:00 /bin/sleep 1s
+Проверяем, что все 3 задачи запущенны, после принудительного завершения 2ой
+$ ps -ef | grep /bin/sleep | head -n 3
+username   15200   15158  0 13:09 ?        00:00:00 /bin/sleep 3s
+username   15201   15158  0 13:09 ?        00:00:00 /bin/sleep 2s
+username   15210   15158  0 13:09 ?        00:00:00 /bin/sleep 1s
+Проверяем, что конфиг обновился и запущена только одна задача
+$ ps -ef | grep /bin/sleep | head -n 1
+username   15227   15158  0 13:09 ?        00:00:00 /bin/sleep 4s
